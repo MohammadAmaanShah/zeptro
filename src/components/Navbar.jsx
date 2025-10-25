@@ -22,11 +22,11 @@ const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
         <div className='bg-white py-3 shadow-2xl sticky top-0 z-20 px-4'>
             <div className='max-w-6xl mx-auto flex justify-between items-center'>
                 {/* logo  */}
-                <div className='flex gap-7 items-center'>
-                    <Link to={'/'}><h1 className='font-bold text-3xl'><span className='text-red-500 font-serif'>Z</span>aptro</h1></Link>
-                    <div className='flex gap-1 cursor-pointer text-gray-700 items-center'>
+                <div className='flex gap-2 md:gap-7 items-center'>
+                    <Link to={'/'}><h1 className='font-bold  md:text-3xl'><span className='text-red-500 font-serif'>Z</span>aptro</h1></Link>
+                    <div className='flex gap-1 cursor-pointer text-gray-700 items-center md:text:md text-xs'>
                         <MapPin className='text-red-500' />
-                        <span className='font-semibold '>{location ? <div className='-space-y-2'><p>{location.city}</p><p>{location.state}</p></div> : "Add Address"}</span>
+                        <span className='font-semibold  '>{location ? <div className='-space-y-2'><p className='mb-0.5'>{location.city}</p><p>{location.state}</p></div> : "Add Address"}</span>
                         <FaCaretDown onClick={() => { setOpenDropDown(true) }} />
                     </div>
 
