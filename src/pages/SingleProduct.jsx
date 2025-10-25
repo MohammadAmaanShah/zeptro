@@ -33,9 +33,9 @@ const SingleProduct = () => {
         <>
             {
                 singleProduct ?
-                    <div className='px-4 mx-4 md:px-0 '>
+                    <div className=' px-4 mx-4 md:px-0  mb-5'>
                         <Breadcrums title={singleProduct.title} />
-                        <div className='max-w-6xl  grid grid-cols-2 gap-10 mx-auto md:p-6'>
+                        <div className='max-w-6xl  grid-cols-1   grid md:grid-cols-2 gap-10 mx-auto md:p-6'>
                             <img src={singleProduct.images} alt={singleProduct.title} className='w-full object-cover rounded-2xl max-h-[430px]' />
                             <div className='flex flex-col gap-6'>
                                 <h1 className='font-bold  text-5xl   md:text-5xl '>{singleProduct.title}</h1>

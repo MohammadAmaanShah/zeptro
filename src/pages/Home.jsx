@@ -6,12 +6,12 @@ import Feature from '../components/Feature'
 
 const Home = () => {
   return (
-    <>
-      {/* <Carousel /> */}
-      {/* <Category /> */}
+    <div className='overflow-x-hidden'>
+      <Carousel />
+      <Category />
       <MidBanner />
       <Feature />
-    </>
+    </div>
   )
 }
 

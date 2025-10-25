@@ -5,7 +5,7 @@ const FilterSection = ({ search, setSearch, brand, setBrand, category, setCatego
 
     const { catagoryOnlyData, brandOnlyData } = getData();
     return (
-        <div className='bg-gray-100  rounded-md mt-10 p-4 h-max'>
+        <div className='bg-gray-100  rounded-md mt-10 p-4 h-max md:block hidden'>
             <input id='gray' type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}

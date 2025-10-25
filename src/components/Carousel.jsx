@@ -66,7 +66,7 @@ const Carousel = () => {
                     data ? (
                         data?.slice(0, 7)?.map((item, index) => {
                             return <div key={index} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10 '>
-                                <div className='flex gap-10 justify-center items-center px-4 h-[470px]'>
+                                <div className='flex  md:flex-row flex-col gap-10 justify-center items-center px-4 min-h-[470px] py-7'>
                                     <div className='space-y-6'>
                                         <h3 className='font-sans text-red-500 text-sm font-semibold'>Powring Your World with the best ...</h3>
                                         <h1 className='text-4xl font-bold line-clamp-3 uppercase md:w-[400px] text-white'>{item.title}</h1>
@@ -74,7 +74,7 @@ const Carousel = () => {
                                         <button className='bg-gradient-to-r from-purple-500 to-red-500 py-3 px-5 cursor-pointer mt-2 rounded-md'>Shop Now </button>
                                     </div>
                                     <div>
-                                        <img onClick={() => navigate(`/products/${item.id}`)} src={item.images} alt={item.title} className='hover:scale-105 transition-all shadow-2xl shadow-red-500 w-[350px] rounded-full ' />
+                                        <img onClick={() => navigate(`/products/${item.id}`)} src={item.images} alt={item.title} className='hover:scale-105 transition-all shadow-2xl shadow-red-500  w-100 rounded-full md:w-sm     ' />
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ const Carousel = () => {
 
 
             </Slider>
-            
+
         </>
 
     )

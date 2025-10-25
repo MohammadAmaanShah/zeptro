@@ -12,7 +12,7 @@ import ResponsiveMenu from './ResponsiveMenu ';
 const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
 
 
-    const { cartItem, addToCart } = useCart();
+    const { cartItems, addToCart } = useCart();
     const [openNav, setOpenNav] = useState(false)
 
 
@@ -51,7 +51,7 @@ const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
                     </ul>
                     <Link to={'/cart'} className=' relative'>
                         <IoCartOutline className='h-7 w-7  ' />
-                        <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItem.length}</span></Link>
+                        <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItems.length}</span></Link>
                     <div className='md:block hidden'> <SignedOut >
                         <SignInButton className='bg-red-500 rounded-md px-3 py-1 text-white font-semibold  cursor-pointer' />
                     </SignedOut>

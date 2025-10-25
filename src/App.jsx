@@ -10,11 +10,14 @@ import axios from 'axios'
 import Fotter from './components/Fotter'
 import SingleProduct from './pages/SingleProduct'
 import CategoryProduct from './pages/CategoryProduct'
+import { useCart } from './context/CartContext'
 
 const App = () => {
   const [location, setLocation] = useState();
 
   const [openDropDown, setOpenDropDown] = useState(false);
+  const { cartItems, setCartItems } = useCart();
+
   const getLocation = async () => {
 
     navigator.geolocation.getCurrentPosition(async pos => {
@@ -43,6 +46,22 @@ const App = () => {
   useEffect(() => {
     getLocation();
   }, [])
+  console.log(cartItems)
+  useEffect(() => {
+
+    const storedCart = JSON.parse(localStorage.getItem('cartItem'));
+    if (storedCart) {
+      setCartItems(storedCart);
+    }
+
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cartItem', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+
+
 
   return (
     <>
