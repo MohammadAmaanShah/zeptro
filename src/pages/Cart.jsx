@@ -26,11 +26,11 @@ const Cart = ({ location, getLocation }) => {
           <div>
             <div className='mt-10'>
               {cartItems.map((item, index) => {
-                return <div key={index} className='bg-gray-100 md:p-5 p-2  rounded-md flex items-center justify-between mt-3 w-screen'>
+                return <div key={index} className='bg-gray-100 md:p-5 p-2  rounded-md flex items-center justify-between mt-3 '>
                   <div className='flex items-center gap-4'>
                     <img src={item.images} alt={item.title} className=' md:w-20 md:h-20 h-12 w-12 rounded-md' />
                     <div>
-                      <h1 className='md:w-xl w-40   line-clamp-2 text-sm md:text-lg md:font-bold truncate '>{item.title}</h1>
+                      <h1 className='md:w-xl w-20    line-clamp-2 text-sm md:text-lg md:font-bold truncate '>{item.title}</h1>
                       <p className='text-red-500 font-semibold md:text-lg'>${item.price}</p>
                     </div>
                   </div>
