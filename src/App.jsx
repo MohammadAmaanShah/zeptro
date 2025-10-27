@@ -11,7 +11,8 @@ import Fotter from './components/Fotter'
 import SingleProduct from './pages/SingleProduct'
 import CategoryProduct from './pages/CategoryProduct'
 import { useCart } from './context/CartContext'
-import ProtectedRoute from './components/ProtectedRoute'
+
+
 
 
 const App = () => {

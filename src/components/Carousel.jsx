@@ -4,9 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import Category from './Category';
-import MidBanner from './MidBanner';
-import Feature from './Feature';
+
 import { useNavigate } from 'react-router-dom';
 import Loading from '../assets/Loading4.webm'
 
