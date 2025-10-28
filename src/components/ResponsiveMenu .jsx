@@ -8,7 +8,7 @@ const ResponsiveMenu = ({ openNav, setOpenNav }) => {
 
     const user = useUser();
 
-    // console.log(user.user.firstName)
+    
     return (
         <div className={`${openNav ? 'left-0' : '-left-200'} fixed bottom-0 top-0 h-screen w-[75%] flex flex-col justify-start bg-white pt-10 px-8   text-black md:hidden rounded-r-2xl shadow-md transtion-all `}>
             <div className=' flex items-center justify-start gap-3'>

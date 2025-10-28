@@ -15,31 +15,28 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
 
-    <DataProvider>
-      <CartProvider>
-        <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
-          <App />
-          <ScrollToTop smooth color='white'  style={{background:'red', display:'flex', alignItems :"center", justifyContent :'center', color:'white', font:'bold'}}/>
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick={false}
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
 
-          />
+  <DataProvider>
+    <CartProvider>
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
+        <App />
+        <ScrollToTop smooth color='white' style={{ background: 'red', display: 'flex', alignItems: "center", justifyContent: 'center', color: 'white', font: 'bold' }} />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
 
-        </ClerkProvider>
-      </CartProvider>
-    </DataProvider>
+        />
 
-  </StrictMode>
-
+      </ClerkProvider>
+    </CartProvider>
+  </DataProvider>
 )

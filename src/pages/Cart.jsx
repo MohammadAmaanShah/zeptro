@@ -12,7 +12,7 @@ import emptyCart from "../assets/empty-cart.png";
 const Cart = ({ location, getLocation }) => {
   const { cartItems, updateQuantity, deleteItem } = useCart();
   const { user } = useUser();
-  console.log(user);
+
   const navigate = useNavigate()
 
 

@@ -9,18 +9,18 @@ import { useCart } from '../context/CartContext';
 const SingleProduct = () => {
 
     const params = useParams();
-    console.log(params.id)
+
     const { addToCart, setCartItems } = useCart();
     const [singleProduct, setSingleProduct] = useState("")
     const getSingleProduct = async () => {
 
         try {
             let res = await axios.get(`https://dummyjson.com/products/${params.id}`)
-            console.log(res.data)
+     
             const product = res.data
             setSingleProduct(product);
         } catch (error) {
-            console.log(error + ' not worrking')
+            console.log(error)
         }
     }
 

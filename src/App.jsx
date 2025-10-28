@@ -11,8 +11,7 @@ import Fotter from './components/Fotter'
 import SingleProduct from './pages/SingleProduct'
 import CategoryProduct from './pages/CategoryProduct'
 import { useCart } from './context/CartContext'
-
-
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 const App = () => {
@@ -27,8 +26,6 @@ const App = () => {
 
       const { latitude, longitude } = pos.coords;
 
-
-
       const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
       try {
 
@@ -38,7 +35,7 @@ const App = () => {
         setLocation(exactLoaction);
         setOpenDropDown(false)
       } catch (error) {
-        console.log(error)
+        // console.log(error)
 
       }
     })
@@ -49,19 +46,27 @@ const App = () => {
   useEffect(() => {
     getLocation();
   }, [])
-  console.log(cartItems)
-  useEffect(() => {
 
-    const storedCart = JSON.parse(localStorage.getItem('cartItem'));
+  useEffect(() => {
+    console.log(JSON.parse(localStorage.getItem('cartItem')))
+     const storedCart = JSON.parse(localStorage.getItem('cartItem'));
+   
     if (storedCart) {
+
       setCartItems(storedCart);
+      console.log('this is local storage getttttt ');
+
     }
 
   }, []);
 
   useEffect(() => {
     localStorage.setItem('cartItem', JSON.stringify(cartItems));
+    console.log('this is local storage set ');
+
   }, [cartItems]);
+
+
 
 
 
@@ -79,7 +84,8 @@ const App = () => {
           <Route path={`/category/:category`} element={<CategoryProduct />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/cart' element={<Cart location={location} getLocation={getLocation} />}></Route>
+          <Route path='/cart' element={<ProtectedRoute>
+          <Cart location={location} getLocation={getLocation} /></ProtectedRoute>}></Route>
 
 
         </Routes>

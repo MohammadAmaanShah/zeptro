@@ -20,7 +20,7 @@ const CategoryProduct = () => {
   }, [])
 
   return (
-    <div className='flex flex-col w-screen gap-4 mb-10 items-center mt-10 px-10  '>
+    <div className='flex flex-col  gap-4 mb-10 items-center mt-10  px-3 md:px-10   '>
 
       {
         data?.map((item, index) => {
@@ -31,12 +31,12 @@ const CategoryProduct = () => {
                 <div className='w-   min-h-[85%] flex gap-1  items-start flex-col  justify-between '>
 
 
-                  <p className='line-clamp-3  text-gray-500  text-sm  md:font-semibold'>{item.description} </p>
-                  <p className='md:text-xl flex flex-wrap gap-1 font-bold text-red-500'>${item.price} <span className='text-black font-bold line-through '>${(item.price / (1 - (item.discountPercentage / 100))).toFixed(2)}</span> <span className='md:text-lg text-sm   px-3 py-1 rounded-md bg-red-500 text-white'>{item.discountPercentage}% discount</span></p>
+                  <p className='line-clamp-3  text-gray-500  text-xs md:text-base  md:font-semibold'>{item.description} </p>
+                  <p className='md:text-xl flex flex-wrap gap-1 font-bold text-red-500'>${item.price} <span className='text-black font-bold line-through '>${(item.price / (1 - (item.discountPercentage / 100))).toFixed(2)}</span> <span className='md:text-lg text-xs   px-3 py-1  rounded-md bg-red-500 text-white'>{item.discountPercentage}% discount</span></p>
 
 
                   <div className='flex gap-4 mt-4   '>
-                    <button onClick={() => addToCart(item)} className='cursor-pointer px-3 flex items-center   bg-red-500 text-white gap-1 py-1 rounded-md text-sm md:text-lg  '><IoCartOutline className='w-5 h-5' /> Add to Cart</button>
+                    <button onClick={() => addToCart(item)} className='cursor-pointer px-3 flex items-center   bg-red-500 text-white gap-1 py-1 rounded-md text-xs md:text-lg md:font-bold '><IoCartOutline className='w-5 h-5' /> Add to Cart</button>
                   </div>
                 </div>
               </div>

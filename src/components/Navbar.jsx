@@ -9,11 +9,13 @@ import { CgClose } from 'react-icons/cg';
 import { useCart } from '../context/CartContext';
 import { HiMenuAlt1, HiMenuAlt3 } from 'react-icons/hi';
 import ResponsiveMenu from './ResponsiveMenu ';
+import { useUser } from '@clerk/clerk-react';
 const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
 
 
     const { cartItems, addToCart } = useCart();
     const [openNav, setOpenNav] = useState(false)
+    const user = useUser()
 
 
 
@@ -31,8 +33,8 @@ const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
                     </div>
 
                     {
-                        openDropDown ? <div className='h-[100px] z-10 w-max shadow-2xl rounded-md bg-white fixed top-16 left-60  p-5 '><h1 className='font-semibold mb-2 flex justify-between text-xl    '>Change location <span className='ml-7' ><CgClose onClick={() => { setOpenDropDown(false) }} /></span></h1>
-                            <button onClick={getLocation} className='bg-red-500 px-3 py-1 rounded-md  text-white font-semibold hover:bg-red-600'>Detect My Location</button>
+                        openDropDown ? <div className='md:h-[100px] z-10 w-max shadow-2xl rounded-md bg-white fixed md:top-16  top-13 md:left-60  left-10  md:p-5 p-2 '><h1 className='font-semibold mb-2 flex justify-between md:text-xl    '>Change location <span className='ml-7' ><CgClose onClick={() => { setOpenDropDown(false) }} /></span></h1>
+                            <button onClick={getLocation} className='bg-red-500 px-3 py-1 rounded-md  text-white text-sm  text-md font-semibold hover:bg-red-600'>Detect My Location</button>
                         </div> : null
 
                     }
@@ -51,7 +53,7 @@ const Navbar = ({ location, getLocation, openDropDown, setOpenDropDown }) => {
                     </ul>
                     <Link to={'/cart'} className=' relative'>
                         <IoCartOutline className='h-7 w-7  ' />
-                        <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItems.length}</span></Link>
+                        <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{user?.user?.firstName ? cartItems.length : 0}</span></Link>
                     <div className='md:block hidden'> <SignedOut >
                         <SignInButton className='bg-red-500 rounded-md px-3 py-1 text-white font-semibold  cursor-pointer' />
                     </SignedOut>

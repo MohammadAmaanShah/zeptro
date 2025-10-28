@@ -11,15 +11,15 @@ export const DataProvider = ({ children }) => {
 
         try {
             const res = await axios.get(`https://dummyjson.com/products`)
-            console.log(res)
+          
 
             const productData = res.data.products;
             setData(productData);
-            console.log(productData)
+           
 
-            // console.log(productData)
+          
         } catch (error) {
-            console.log(error + ' the is  an error ');
+            console.log(error);
 
         }
     }

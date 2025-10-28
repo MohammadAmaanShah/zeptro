@@ -9,10 +9,10 @@ const Category = () => {
     const navigate = useNavigate();
 
 
-    console.log(catagoryOnlyData);
+
     return (
         <div className='bg-[#101829]'>
-            <div className=' max-w-7xl  flex md:justify-around  flex-wrap items-center justify-center py-5 px-4 gap-10 mx-auto '>
+            <div className=' max-w-7xl  flex md:justify-around  flex-wrap items-center justify-center  py-5 px-4 gap-10 mx-auto '>
 
                 {
                     catagoryOnlyData?.map((item, index) => {
