@@ -10,7 +10,7 @@ export const DataProvider = ({ children }) => {
     const fetchAllProducts = async () => {
 
         try {
-            const res = await axios.get(`https://dummyjson.com/products`)
+            const res = await axios.get(`http://localhost:3001/api/products`)
           
 
             const productData = res.data.products;

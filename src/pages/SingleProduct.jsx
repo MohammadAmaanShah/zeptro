@@ -15,7 +15,7 @@ const SingleProduct = () => {
     const getSingleProduct = async () => {
 
         try {
-            let res = await axios.get(`https://dummyjson.com/products/${params.id}`)
+            let res = await axios.get(`http://localhost:3001/api/products/${params.id}`)
      
             const product = res.data
             setSingleProduct(product);
